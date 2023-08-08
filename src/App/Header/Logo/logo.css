@@ -1,0 +1,12 @@
+.logo
+{
+    grid-column: 2 / 3;
+}
+
+.logo a img
+{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: blue;
+}

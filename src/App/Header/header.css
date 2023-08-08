@@ -1,0 +1,8 @@
+.header
+{
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.75);
+    align-items: center;
+    display: grid;
+    grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 900px) minmax(auto, 300px) 1fr;
+}
