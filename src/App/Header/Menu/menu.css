@@ -3,7 +3,7 @@
     grid-column: 3/4;
 }
 
-.menu ul
+.menu_list
 {
     display: grid;
     grid-auto-flow: column;
@@ -12,7 +12,37 @@
     list-style: none;
 }
 
-ul li
+.menu_list_item
 {
-    margin: 0 0 0 20px;
+    width: 100%;
+}
+
+.menu_list_item:last-child
+{
+    border-right: 1px solid #2c71b8;
+
+}
+
+.menu_link
+{
+    display: block;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: #2c71b8;
+    font-size: 21px;
+    border-left: 1px solid #2c71b8;
+}
+
+.menu_link:hover
+{
+    background-color: #2c71b8;
+    color: #ffffff;
+    transition: .2s linear;
+}
+
+.menu_link:not(hover)
+{
+    transition: .2s linear;
 }

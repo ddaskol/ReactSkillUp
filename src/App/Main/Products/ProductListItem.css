@@ -1,0 +1,36 @@
+.product_list_item
+{
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 15px;
+    margin: 10px;
+    background-color: rgba(0, 0, 255, 0.755);
+    font-size: 21px;
+    letter-spacing: 0.5px;
+}
+
+.product_title
+{
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.product_description
+{
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.product_features
+{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.btn_add_to_cart
+{
+    text-transform: uppercase;
+    font-size: 21px;
+}
