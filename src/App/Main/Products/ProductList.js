@@ -10,10 +10,11 @@ const ProductList = () => {
             <div className="product_list">
                 {
                     Products.map(({
-                        id, name, description, type, capacity, price
+                        id, image, name, description, type, capacity, price
                     }) => (
                         <ProductListItem
                             key={id}
+                            image={image}
                             name={name}
                             description={description}
                             type={type}
