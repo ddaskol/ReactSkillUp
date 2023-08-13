@@ -8,7 +8,7 @@ const Logo = () => {
     return (
         <>
             <div className="logo text-center">
-                <a><img src={logo} alt="" /> </a>
+                <a href="/"><img src={logo} alt="" /> </a>
             </div>
         </>
     )
