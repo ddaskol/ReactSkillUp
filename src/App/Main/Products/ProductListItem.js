@@ -1,23 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import "./ProductListItem.css"
 import PropTypes from "prop-types"
 
-const ProductListItem = (
-    { image, name, description, type, capacity, price }
-) => {
-    return (
-        <div className="product_list_item">
-            <div className="product_img">
-                <img src={image} alt=""></img>
+class ProductListItem extends Component {
+    render() {
+        const { image, name, description, type, capacity, price } = this.props
+
+        return (
+            <div className="product_list_item">
+                <div className="product_img">
+                    <img src={image} alt=""></img>
+                </div>
+                <div className="product_title">{name}</div>
+                <div className="product_description">{description}</div>
+                <div className="product_features">Type: {type} </div>
+                <div className="product_features"> Capacity: {capacity} Gb</div>
+                <div className="product_quantity">
+                    <button>-</button>
+                    <input type="text" value="1" readOnly></input>
+                    <button>+</button>
+                </div>
+                <div className="product_price">{price} $</div>
+                <button className="btn_add_to_cart"> Add to cart</button>
             </div>
-            <div className="product_title">{name}</div>
-            <div className="product_description">{description}</div>
-            <div className="product_features">Type: {type} </div>
-            <div className="product_features"> Capacity: {capacity} Gb</div>
-            <div className="product_price">{price} $</div>
-            <button className="btn_add_to_cart"> Add to cart</button>
-        </div>
-    )
+        )
+    }
 }
 
 ProductListItem.propTypes = {
@@ -29,8 +36,8 @@ ProductListItem.propTypes = {
 }
 
 ProductListItem.defaultProps = {
-    description: "No description ...",
-    image: "/images/no-image.png"
+    description: "No description ...", //if Pr not have Desc
+    image: "/images/no-image.png" //if Product no have img - this default image
 }
 
 export default ProductListItem

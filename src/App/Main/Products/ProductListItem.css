@@ -37,6 +37,33 @@
     margin-bottom: 15px;
 }
 
+.product_quantity
+{
+    text-align: center;
+}
+
+.product_quantity input
+{
+    height: 30px;
+    text-align: center;
+    border: none;
+}
+
+
+
+.product_quantity button
+{
+    height: 34px;
+    width: 30px;
+    border: none;
+}
+
+.product_quantity button:hover
+{
+    background-color: rgb(213, 213, 213);
+    border: none;
+}
+
 .product_price
 {
     text-align: center;
