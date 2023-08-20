@@ -6,6 +6,8 @@ class ProductListItem extends Component {
 
     state = {
         productCount: 1,
+        productColor: "green",
+
     }
     onIncrementClick() {
         this.setState((prevState) => ({
@@ -17,6 +19,29 @@ class ProductListItem extends Component {
             productCount: prevState.productCount - 1,
         }))
     }
+    onChangeColor = () => {
+        this.setState((prevState) => {
+            // return prevState.productColor === "red" ? { productColor: "Green" } : { productColor: "red" }
+            if (prevState.productColor === "red") {
+                return {
+                    productColor: "green"
+                }
+            } else {
+                return {
+                    productColor: "red"
+                }
+            }
+        })
+    }
+
+
+    // state = {
+    // }
+    // onChangeColor = () => {
+    //     this.setState(() => ({
+    //         productColor: "red",
+    //     }))
+    // }
 
     render() {
         console.log(this)
@@ -28,6 +53,11 @@ class ProductListItem extends Component {
                     <img src={image} alt=""></img>
                 </div>
                 <div className="product_title">{name}</div>
+                <p>Color: {this.state.productColor}</p>
+                <button
+                    onClick={this.onChangeColor}
+
+                >Change Color</button>
                 <div className="product_description">{description}</div>
                 <div className="product_features">Type: {type} </div>
                 <div className="product_features"> Capacity: {capacity} Gb</div>
@@ -39,7 +69,6 @@ class ProductListItem extends Component {
                     <input type="text" value={this.state.productCount} readOnly></input>
                     <button
                         disabled={this.state.productCount >= 10}
-
                         onClick={() => this.onIncrementClick()}
                     >+</button>
                 </div>
