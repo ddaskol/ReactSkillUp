@@ -3,6 +3,22 @@ import "./ProductListItem.css"
 import PropTypes from "prop-types"
 
 class ProductListItem extends Component {
+
+    state = {
+        productCount: 1,
+    }
+
+    onIncrementClick() {
+        this.setState((prevState) => ({
+            productCount: prevState.productCount + 1,
+        }))
+    }
+    onDecrementClick() {
+        this.setState((prevState) => ({
+            productCount: prevState.productCount - 1,
+        }))
+    }
+
     render() {
         const { image, name, description, type, capacity, price } = this.props
 
@@ -16,9 +32,13 @@ class ProductListItem extends Component {
                 <div className="product_features">Type: {type} </div>
                 <div className="product_features"> Capacity: {capacity} Gb</div>
                 <div className="product_quantity">
-                    <button>-</button>
-                    <input type="text" value="1" readOnly></input>
-                    <button>+</button>
+                    <button
+                        onClick={() => this.onDecrementClick()}
+                    >-</button>
+                    <input type="text" value={this.state.productCount} readOnly></input>
+                    <button
+                        onClick={() => this.onIncrementClick()}
+                    >+</button>
                 </div>
                 <div className="product_price">{price} $</div>
                 <button className="btn_add_to_cart"> Add to cart</button>
