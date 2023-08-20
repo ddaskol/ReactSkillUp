@@ -4,21 +4,15 @@ import PropTypes from "prop-types"
 
 class ProductListItem extends Component {
 
-    constructor() {
-        super()
-        this.onIncrementClick = this.onIncrementClick.bind(this)
-    }
-
     state = {
         productCount: 1,
     }
-    onIncrementClick() {
-
+    onIncrementClick = () => {
         this.setState((prevState) => ({
             productCount: prevState.productCount + 1,
         }))
     }
-    onDecrementClick() {
+    onDecrementClick = () => {
         this.setState((prevState) => ({
             productCount: prevState.productCount - 1,
         }))
@@ -39,6 +33,7 @@ class ProductListItem extends Component {
                 <div className="product_features"> Capacity: {capacity} Gb</div>
                 <div className="product_quantity">
                     <button
+                        onClick={this.onDecrementClick}
                     >-</button>
                     <input type="text" value={this.state.productCount} readOnly></input>
                     <button
