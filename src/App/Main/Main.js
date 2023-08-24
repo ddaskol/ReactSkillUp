@@ -1,7 +1,9 @@
 import React from 'react'
 import ProductList from './Products/ProductList'
 
-const Main = () => {
+const Main = ({
+    addToCart,
+}) => {
     return (
         <>
             <main className="main">
@@ -11,7 +13,9 @@ const Main = () => {
                             Filter
                         </div>
                         <div className="main-content">
-                            <ProductList />
+                            <ProductList
+                                addToCart={addToCart}
+                            />
                         </div>
                     </div>
                 </div>

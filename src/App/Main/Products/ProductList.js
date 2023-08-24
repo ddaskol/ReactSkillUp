@@ -3,7 +3,9 @@ import ProductListItem from "./ProductListItem";
 import Products from "./Products";
 
 
-const ProductList = () => {
+const ProductList = ({
+    addToCart,
+}) => {
     return (
         <>
             <h1 className="page_title"> Product List</h1>
@@ -20,6 +22,7 @@ const ProductList = () => {
                             type={type}
                             capacity={capacity}
                             price={price}
+                            addToCart={addToCart}
                         />
                     ))
                 }
