@@ -7,7 +7,8 @@ import Menu from './Menu/Menu'
 import Cart from './Cart/Cart'
 
 const Header = ({
-    cartData
+    // cartData
+    productsInCart,
 }) => {
     return (
         <>
@@ -15,8 +16,9 @@ const Header = ({
                 <Logo />
                 <Menu />
                 <Cart
-                    count={cartData.count}
-                    price={cartData.price}
+                    // count={cartData.count}
+                    // price={cartData.price}
+                    productsInCart={productsInCart}
                 />
             </header>
         </>
