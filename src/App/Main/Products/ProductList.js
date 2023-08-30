@@ -16,6 +16,7 @@ const ProductList = ({
                     }) => (
                         <ProductListItem
                             key={id}
+                            id={id}
                             image={image}
                             name={name}
                             description={description}
