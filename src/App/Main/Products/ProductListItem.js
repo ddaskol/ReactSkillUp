@@ -6,7 +6,6 @@ class ProductListItem extends Component {
 
     state = {
         productCount: 1,
-        productColor: "green",
 
     }
     onIncrementClick() {
@@ -21,7 +20,7 @@ class ProductListItem extends Component {
     }
 
     render() {
-        const { image, name, description, type, capacity, price, addToCart, } = this.props
+        const { id, image, name, description, type, capacity, price, addToCart, } = this.props
 
         return (
             <div className="product_list_item">
@@ -45,7 +44,7 @@ class ProductListItem extends Component {
                 </div>
                 <div className="product_price">{price} $</div>
                 <button className="btn_add_to_cart"
-                    onClick={() => addToCart(this.state.productCount, price)}
+                    onClick={() => addToCart({ id }, this.state.productCount)}
                 > Add to cart</button>
             </div>
         )
