@@ -17,7 +17,7 @@ class App extends Component {
         productsInCart: {
             1: 3,
             2: 5,
-            3: 10,
+
         },
     }
 
@@ -31,6 +31,7 @@ class App extends Component {
         }))
     }
 
+
     render() {
         return (
             <>
@@ -38,6 +39,8 @@ class App extends Component {
                     // cartData={this.state.cartData}
                     productsInCart={this.state.productsInCart}
                 />
+                <button
+                >Add to cart</button>
                 <Main
                     addToCart={this.addToCart}
                 />
