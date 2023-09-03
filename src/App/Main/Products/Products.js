@@ -16,7 +16,7 @@ const Products = [
         description: "This is iPhone XS",
         type: "phone",
         capacity: 64,
-        price: 1000,
+        price: 10000,
         image: "/images/iPhone.png",
 
     },
@@ -36,7 +36,7 @@ const Products = [
         description: "This is iPhone 12",
         type: "phone",
         capacity: 64,
-        price: 1000,
+        price: 500,
         // image: "/images/no-image.png",
 
     },
