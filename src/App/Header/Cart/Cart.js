@@ -9,15 +9,16 @@ const productsObject = products.reduce((obj, product) => ({
 
 console.log(productsObject)
 
-const Cart = ({
+export default function Cart({
     productsInCart
-}) => {
+}) {
     return (
         <>
             <div className="cart text-center">
                 {
                     Object.keys(productsInCart).map(productId => (
                         <div key={productId}> {productsObject[productId].name}: {productsInCart[productId]}</div>
+
                     ))
                 }
                 <div>
@@ -33,5 +34,5 @@ const Cart = ({
     )
 }
 
-export default Cart
+// export default Cart
 
