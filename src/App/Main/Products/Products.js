@@ -1,5 +1,7 @@
 // import React from "react";
 
+import { array } from "prop-types"
+
 const Products = [
     {
         id: 1,
@@ -41,5 +43,10 @@ const Products = [
 
     },
 ]
+
+export const getProductsObject = array => array.reduce((obj, product) => ({
+    ...obj,
+    [product.id]: product
+}), {})
 
 export default Products
