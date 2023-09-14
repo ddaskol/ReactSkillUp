@@ -1,17 +1,24 @@
 import React from "react";
 import { keys } from 'lodash'
 import products, { getProductsObject } from "../../App/Main/Products/Products"
+import CartProductListItem from "./CartProtuctListItem";
 
 
 export default function CartProductList({
     productsInCart,
-    productsObject = getProductsObject(products)
+    productsObject = getProductsObject(products),
+    CartItem = CartProductListItem,
+    removeProductFromCart,
 }) {
     return (
 
         keys(productsInCart).map(productId => (
-            <div key={productId}> {productsObject[productId].name}:
-                {productsInCart[productId]}</div>
+            <CartItem
+                key={productId}
+                product={productsObject[productId]}
+                productCount={productsInCart[productId]}
+                removeProductFromCart={removeProductFromCart}
+            />
 
         ))
 

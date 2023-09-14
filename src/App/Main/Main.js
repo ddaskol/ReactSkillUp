@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from "react-dom";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PaymentsPage from './PaymentsPage/PaymentsPage'
 import ShippingPage from './ShippingPage/ShippingPage'
@@ -8,7 +8,8 @@ import ProductList from './Products/ProductList'
 
 const Main = ({
     addToCart,
-    productsInCart
+    productsInCart,
+    removeProductFromCart
 }) => {
     return (
         <main className="main">
@@ -29,9 +30,11 @@ const Main = ({
                             <Route path="/shipping" Component={ShippingPage} />
 
                             <Route path="/cart" Component={() => (
-                                <CartPage productsInCart={productsInCart}
-
-                                />)}
+                                <CartPage
+                                    productsInCart={productsInCart}
+                                    removeProductFromCart={removeProductFromCart}
+                                />
+                            )}
                             />
                         </Routes>
                     </div>
