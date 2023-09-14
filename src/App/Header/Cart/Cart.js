@@ -1,6 +1,6 @@
 import React from "react";
-import { keys } from 'lodash'
 import "./cart.css"
+import { keys } from 'lodash'
 import products from "../../Main/Products/Products"
 import { Link } from "react-router-dom"
 
@@ -8,8 +8,6 @@ const productsObject = products.reduce((obj, product) => ({
     ...obj,
     [product.id]: product
 }), {})
-
-console.log(productsObject)
 
 export default function Cart({
     productsInCart
@@ -19,7 +17,8 @@ export default function Cart({
         <div className="cart text-center">
             {
                 keys(productsInCart).map(productId => (
-                    <div key={productId}> {productsObject[productId].name}: {productsInCart[productId]}</div>
+                    <div key={productId}> {productsObject[productId].name}:
+                        {productsInCart[productId]}</div>
 
                 ))
             }
@@ -31,6 +30,7 @@ export default function Cart({
                 } $
             </div>
             <Link to="/cart">Show Cart</Link>
+
         </div>
 
     )
