@@ -9,7 +9,8 @@ import ProductList from './Products/ProductList'
 const Main = ({
     addToCart,
     productsInCart,
-    removeProductFromCart
+    removeProductFromCart,
+    changeProductQuantity,
 }) => {
     return (
         <main className="main">
@@ -19,7 +20,6 @@ const Main = ({
                         Filter
                     </div>
                     <div className="main-content">
-                        {/* */}
                         <Routes>
                             <Route path="/" exact Component={() => (
                                 <ProductList
@@ -28,11 +28,11 @@ const Main = ({
                             )} />
                             <Route path="/payments" Component={PaymentsPage} />
                             <Route path="/shipping" Component={ShippingPage} />
-
                             <Route path="/cart" Component={() => (
                                 <CartPage
                                     productsInCart={productsInCart}
                                     removeProductFromCart={removeProductFromCart}
+                                    changeProductQuantity={changeProductQuantity}
                                 />
                             )}
                             />

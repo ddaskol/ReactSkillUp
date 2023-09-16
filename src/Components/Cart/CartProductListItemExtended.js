@@ -1,10 +1,13 @@
 import React from "react";
+import Quantity from "../Quantity/Quantity";
 import "./CartProductListItemExtended.css"
+
 
 const CartProductListItemExtended = ({
     product,
     productCount,
-    removeProductFromCart
+    removeProductFromCart,
+    changeProductQuantity
 }) => (
     <div className="cart_product_list_item_description">
         <div className="row">
@@ -24,6 +27,15 @@ const CartProductListItemExtended = ({
                 <p className="cart_extended_sum">
                     Sum for this item:  <span className="bold sum_price">$  {(product.price * productCount)} </span>
                 </p>
+                <Quantity
+                    productCount={productCount}
+                    onIncrementClick={() => changeProductQuantity(product.id, productCount + 1)}
+                    onDecrementClick={() => productCount === 1 ?
+                        removeProductFromCart(product.id)
+                        :
+                        changeProductQuantity(product.id, productCount - 1)}
+                    minCount={0}
+                />
                 <button className="btn_delete" onClick={() => removeProductFromCart(product.id)}> Delete Product</button>
 
             </div>

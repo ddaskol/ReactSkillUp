@@ -9,6 +9,7 @@ export default function CartProductList({
     productsObject = getProductsObject(products),
     CartItem = CartProductListItem,
     removeProductFromCart,
+    changeProductQuantity,
 }) {
     return (
 
@@ -18,6 +19,7 @@ export default function CartProductList({
                 product={productsObject[productId]}
                 productCount={productsInCart[productId]}
                 removeProductFromCart={removeProductFromCart}
+                changeProductQuantity={changeProductQuantity}
             />
 
         ))
