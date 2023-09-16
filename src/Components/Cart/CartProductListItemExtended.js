@@ -1,5 +1,5 @@
 import React from "react";
-import "./css.css"
+import "./CartProductListItemExtended.css"
 
 const CartProductListItemExtended = ({
     product,
@@ -13,7 +13,7 @@ const CartProductListItemExtended = ({
             </div>
             <div className="col_lg_9">
                 <p className="cart_extended_name">
-                    <span> {product.name} </span>
+                    <span className="bold"> {product.name} </span>
                 </p>
                 <p className="cart_extended_price">
                     Price for one CartItem: <span className="bold">$ {product.price}</span>
@@ -24,7 +24,7 @@ const CartProductListItemExtended = ({
                 <p className="cart_extended_sum">
                     Sum for this item:  <span className="bold sum_price">$  {(product.price * productCount)} </span>
                 </p>
-                <button onClick={() => removeProductFromCart(product.id)}> Delete Product</button>
+                <button className="btn_delete" onClick={() => removeProductFromCart(product.id)}> Delete Product</button>
 
             </div>
         </div>

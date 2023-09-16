@@ -1,0 +1,64 @@
+div.cart_product_list_item_description
+{
+    background: #fff;
+    border-radius: 10px;
+    margin: 25px 0;
+    padding: 15px;
+    border: 1px dotted;
+    color: black;
+}
+
+.row
+{
+    display: flex;
+}
+
+.col_lg_3
+{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col_lg_9
+{
+    flex: 0 0 75%;
+    max-width: 75%;
+    line-height: 30px;
+}
+
+.cart_extended_name
+{
+    text-align: center;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.cart_extended_price
+{}
+
+.cart_extended_count
+{}
+
+.cart_extended_sum
+{
+    text-align: right;
+}
+
+.bold
+{
+    font-weight: bold;
+
+}
+
+.sum_price
+{
+    font-size: 21px;
+    color: rgb(82, 82, 254);
+}
+
+.btn_delete
+{
+    width: 200px;
+    max-width: 200px;
+    height: 30px;
+}

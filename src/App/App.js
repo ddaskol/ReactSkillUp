@@ -29,10 +29,10 @@ class App extends Component {
 
     removeProductFromCart = (productId) => {
         this.setState((prevState) => {
-            const prevProductsInCart = { ...prevState.productsInCart }
+            // const prevProductsInCart = { ...prevState.productsInCart }
+            const prevProductsInCart = Object.assign({}, prevState.productsInCart)
 
             delete prevProductsInCart[productId];
-
             return {
                 productsInCart: prevProductsInCart
             }
