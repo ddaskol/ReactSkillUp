@@ -7,6 +7,8 @@ import Header from './Header/Header'
 import Main from './Main/Main'
 import Footer from './Footer/Footer'
 
+import { omit } from 'lodash'
+
 
 class App extends Component {
 
@@ -28,15 +30,9 @@ class App extends Component {
     }
 
     removeProductFromCart = (productId) => {
-        this.setState((prevState) => {
-            // const prevProductsInCart = { ...prevState.productsInCart }
-            const prevProductsInCart = Object.assign({}, prevState.productsInCart)
-
-            delete prevProductsInCart[productId];
-            return {
-                productsInCart: prevProductsInCart
-            }
-        })
+        this.setState((prevState) => ({
+            productsInCart: omit(prevState.productsInCart, [productId])
+        }))
 
     }
     render() {
