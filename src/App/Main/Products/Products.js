@@ -11,6 +11,7 @@ const Products = [
         capacity: 64,
         price: 1000,
         image: "/images/iPhone.png",
+        fullDescription: "this is iPhone X",
     },
     {
         id: 2,

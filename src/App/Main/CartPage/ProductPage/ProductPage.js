@@ -9,7 +9,11 @@ const ProductPage = ({
 
     return (
         <>
-            <h1 className="page_title">{productsObject[id].name}</h1>
+            <div className="page_title ">{productsObject[id].name}</div>
+            <div className="red" dangerouslySetInnerHTML={{
+                __html: productsObject[id].fullDescription
+            }}
+            ></div>
         </>
     )
 
