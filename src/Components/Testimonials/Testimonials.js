@@ -20,6 +20,8 @@ const Testimonials = () => {
         },
     ]
 
+    const [testimonials, setTestimonials] = useState(arrTestimonials)
+
     const [newTestimonials, setNewTestimonials] = useState({
         name: "",
         text: "",
@@ -38,14 +40,24 @@ const Testimonials = () => {
             text: e.target.value
         }))
     }
-    console.log(newTestimonials)
+
+    const sendForm = (e) => {
+        e.preventDefault();
+        setTestimonials(value => {
+            return [...value, newTestimonials]
+        })
+        setNewTestimonials({
+            name: '',
+            text: '',
+        })
+    }
     return (
         <>
             <h1 > Testimonials</h1>
 
 
             {
-                arrTestimonials.map((item) => (
+                testimonials.map((item) => (
                     <div style={{
                         backgroundColor: "red",
                         padding: "10px"
@@ -56,7 +68,7 @@ const Testimonials = () => {
                 ))
             }
 
-            <form>
+            <form onSubmit={sendForm}>
                 <div>
                     <input
                         type="text"
@@ -73,7 +85,7 @@ const Testimonials = () => {
                         onChange={handleTextChange}
                     ></textarea>
                 </div>
-                <button> Leave a comment</button>
+                <button > Leave a comment</button>
             </form>
 
         </>
