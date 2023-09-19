@@ -5,6 +5,8 @@ import PaymentsPage from './PaymentsPage/PaymentsPage'
 import ShippingPage from './ShippingPage/ShippingPage'
 import CartPage from './CartPage/CartPage'
 import ProductList from './Products/ProductList'
+import ProductPage from './CartPage/ProductPage/ProductPage';
+import Testimonials from '../../Components/Testimonials/Testimonials';
 
 const Main = ({
     addToCart,
@@ -12,6 +14,10 @@ const Main = ({
     removeProductFromCart,
     changeProductQuantity,
 }) => {
+    const INNER_LINKS = {
+        payments: '/payments',
+    }
+
     return (
         <main className="main">
             <div className="container">
@@ -20,13 +26,20 @@ const Main = ({
                         Filter
                     </div>
                     <div className="main-content">
+
                         <Routes>
-                            <Route path="/" exact Component={() => (
-                                <ProductList
-                                    addToCart={addToCart}
-                                />
+                            {/* <Route path="/" exact Component={Testimonials} /> */}
+
+                            <Route path="/" Component={() => (
+                                <>
+                                    <ProductList
+                                        addToCart={addToCart}
+                                    />
+                                    <Testimonials />
+                                </>
                             )} />
-                            <Route path="/payments" Component={PaymentsPage} />
+
+                            <Route path={INNER_LINKS.payments} Component={PaymentsPage} />
                             <Route path="/shipping" Component={ShippingPage} />
                             <Route path="/cart" Component={() => (
                                 <CartPage
@@ -36,6 +49,8 @@ const Main = ({
                                 />
                             )}
                             />
+                            <Route path="/products/:id" Component={ProductPage} />
+
                         </Routes>
                     </div>
                 </div>
