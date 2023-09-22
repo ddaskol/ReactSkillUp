@@ -5,6 +5,9 @@ import Products from "./Products";
 
 const ProductList = ({
     addToCart,
+    addLike,
+    removeLike,
+    productsLikeState
 }) => {
     return (
         <>
@@ -24,6 +27,9 @@ const ProductList = ({
                             capacity={capacity}
                             price={price}
                             addToCart={addToCart}
+                            addLike={addLike}
+                            removeLike={removeLike}
+                            isLiked={productsLikeState[id]}
                         />
                     ))
                 }

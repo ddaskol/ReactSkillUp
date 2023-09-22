@@ -8,6 +8,7 @@ const CartPage = ({
     productsInCart,
     removeProductFromCart,
     changeProductQuantity,
+
 }) => {
     return (
         <>
@@ -17,6 +18,7 @@ const CartPage = ({
                 CartItem={CartProductListItemExtended}
                 removeProductFromCart={removeProductFromCart}
                 changeProductQuantity={changeProductQuantity}
+
             />
             <CartTotal
                 productsInCart={productsInCart}

@@ -13,6 +13,9 @@ const Main = ({
     productsInCart,
     removeProductFromCart,
     changeProductQuantity,
+    addLike,
+    removeLike,
+    productsLikeState,
 }) => {
     const INNER_LINKS = {
         payments: '/payments',
@@ -34,6 +37,9 @@ const Main = ({
                                 <>
                                     <ProductList
                                         addToCart={addToCart}
+                                        addLike={addLike}
+                                        removeLike={removeLike}
+                                        productsLikeState={productsLikeState}
                                     />
                                     <Testimonials />
                                 </>
@@ -46,6 +52,7 @@ const Main = ({
                                     productsInCart={productsInCart}
                                     removeProductFromCart={removeProductFromCart}
                                     changeProductQuantity={changeProductQuantity}
+
                                 />
                             )}
                             />

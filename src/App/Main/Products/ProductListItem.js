@@ -22,13 +22,18 @@ class ProductListItem extends Component {
     }
 
     render() {
-        const { id, image, name, description, type, capacity, price, addToCart, } = this.props
+        const { id, image, name, description, type, capacity, price, addToCart, addLike, removeLike, isLiked } = this.props
 
         return (
             <div className="product_list_item">
                 <div className="product_img">
                     <img src={image} alt=""></img>
                 </div>
+                <button
+                    onClick={() => isLiked === true ? removeLike(id) : addLike(id)}
+                >
+                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                </button>
                 <Link to={`/products/${id}`}>
                     <div className="product_title">{name}</div>
                 </Link>
