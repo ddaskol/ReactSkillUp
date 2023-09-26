@@ -23,14 +23,16 @@ class ProductListItem extends Component {
     }
 
     render() {
-        const { id, image, name, description, type, capacity, price, addToCart, isLiked } = this.props
-
+        const { id, image, name, description, type, capacity, price, addToCart, isLiked, addLike, removeLike } = this.props
+        console.log(this)
         return (
             <div className="product_list_item">
                 <div className="product_img">
                     <img src={image} alt=""></img>
                 </div>
-                <button>
+                <button
+                    onClick={() => isLiked ? removeLike(id) : addLike(id)}
+                >
                     {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
 
                 </button>
@@ -72,6 +74,18 @@ const mapState = (state, { id }) => ({
     isLiked: state[id]
 })
 
+const mapDispatch = dispatch => ({
+    addLike: (id) => dispatch({
+        type: "LIKE",
+        id
+    }),
+    removeLike: (id) => dispatch({
+        type: "DISLIKE",
+        id
+    })
+})
+
 export default connect(
-    mapState
+    mapState,
+    mapDispatch
 )(ProductListItem)

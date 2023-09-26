@@ -40,15 +40,15 @@ const CartProductListItemExtended = ({
                 />
                 <button className="btn_delete" onClick={() => removeProductFromCart(product.id)}> Delete Product</button>
                 <button>
-                    {isLiked ? <span>&#9825;</span> : <span>&#9829;</span>}
+                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
 
                 </button>
             </div>
         </div>
     </div>
 )
-const mapState = (state, { id }) => ({
-    isLiked: state[id]
+const mapState = (state, { product }) => ({
+    isLiked: state[product.id]
 })
 
 export default connect(

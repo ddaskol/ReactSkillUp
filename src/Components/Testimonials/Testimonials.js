@@ -57,11 +57,12 @@ const Testimonials = () => {
 
 
             {
-                testimonials.map((item) => (
-                    <div style={{
-                        backgroundColor: "red",
-                        padding: "10px"
-                    }}>
+                testimonials.map((item, i) => (
+                    <div key={i}
+                        style={{
+                            backgroundColor: "red",
+                            padding: "10px"
+                        }}>
                         <div> Name: {item.name}</div>
                         <div> Message: {item.text}</div>
                     </div>
