@@ -39,7 +39,8 @@ const CartProductListItemExtended = ({
                     minCount={0}
                 />
                 <button className="btn_delete" onClick={() => removeProductFromCart(product.id)}> Delete Product</button>
-                <button>
+                <button
+                >
                     {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
 
                 </button>
@@ -48,7 +49,7 @@ const CartProductListItemExtended = ({
     </div>
 )
 const mapState = (state, { product }) => ({
-    isLiked: state[product.id]
+    isLiked: state.productsLikeState[product.id]
 })
 
 export default connect(

@@ -2,6 +2,7 @@ import React from "react";
 import CartTotal from "../../../Components/Cart/CartTotal";
 import CartProductList from "../../../Components/Cart/CartProductList";
 import CartProductListItemExtended from "../../../Components/Cart/CartProductListItemExtended";
+import { connect } from "react-redux";
 
 
 const CartPage = ({
@@ -24,5 +25,10 @@ const CartPage = ({
         </>
     )
 }
+const mapState = state => ({
+    productsInCart: state.productsInCart
+})
 
-export default CartPage
+export default connect(
+    mapState
+)(CartPage)
