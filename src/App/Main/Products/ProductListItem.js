@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./ProductListItem.css"
+import { connect } from "react-redux";
 import PropTypes from "prop-types"
 import Quantity from "../../../Components/Quantity/Quantity";
 import { Link } from "react-router-dom";
@@ -22,13 +23,17 @@ class ProductListItem extends Component {
     }
 
     render() {
-        const { id, image, name, description, type, capacity, price, addToCart, } = this.props
+        const { id, image, name, description, type, capacity, price, addToCart, isLiked } = this.props
 
         return (
             <div className="product_list_item">
                 <div className="product_img">
                     <img src={image} alt=""></img>
                 </div>
+                <button>
+                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+
+                </button>
                 <Link to={`/products/${id}`}>
                     <div className="product_title">{name}</div>
                 </Link>
@@ -62,4 +67,11 @@ ProductListItem.defaultProps = {
     image: "/images/no-image.png" //if Product no have img - this default image
 }
 
-export default ProductListItem
+
+const mapState = (state, { id }) => ({
+    isLiked: state[id]
+})
+
+export default connect(
+    mapState
+)(ProductListItem)
