@@ -9,7 +9,9 @@ const CartProductListItemExtended = ({
     productCount,
     removeProductFromCart,
     changeProductQuantity,
-    isLiked
+    isLiked,
+    addLike,
+    removeLike
 }) => (
     <div className="cart_product_list_item_description">
         <div className="row">
@@ -40,6 +42,7 @@ const CartProductListItemExtended = ({
                 />
                 <button className="btn_delete" onClick={() => removeProductFromCart(product.id)}> Delete Product</button>
                 <button
+                    onClick={() => isLiked ? removeLike(product.id) : addLike(product.id)}
                 >
                     {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
 
@@ -51,15 +54,29 @@ const CartProductListItemExtended = ({
 const mapState = (state, { product }) => ({
     isLiked: state.productsLikeState[product.id]
 })
+const mapDispatch = dispatch => ({
+    addLike: (id) => dispatch({
+        type: "LIKE",
+        id
+    }),
+    removeLike: (id) => dispatch({
+        type: "DISLIKE",
+        id
+    }),
+    changeProductQuantity: (id, count) => dispatch({
+        type: "CHANGE_PRODUCT_QUANTITY",
+        id,
+        count
+    }),
+    removeProductFromCart: (id, count) => dispatch({
+        type: "REMOVE_PRODUCT_FROM_CART",
+        id,
+        count
+    })
+})
 
 export default connect(
-    mapState
+    mapState,
+    mapDispatch
 )(CartProductListItemExtended)
 
-// const mapState = (state, { id }) => ({
-//     isLiked: state[id]
-// })
-
-// export default connect(
-//     mapState
-// )(ProductListItem)

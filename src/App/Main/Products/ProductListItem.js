@@ -82,7 +82,12 @@ const mapDispatch = dispatch => ({
     removeLike: (id) => dispatch({
         type: "DISLIKE",
         id
-    })
+    }),
+    addToCart: (id, count) => dispatch({
+        type: "ADD_PRODUCT_TO_CART",
+        id,
+        count
+    }),
 })
 
 export default connect(

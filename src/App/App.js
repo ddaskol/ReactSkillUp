@@ -27,7 +27,7 @@ class App extends Component {
                 [id]: (prevState.productsInCart[id] || 0) + count,
             }
         }))
-    }
+    } //переписали в сховищі cartReducer
 
     removeProductFromCart = (productId) => {
         this.setState((prevState) => ({
